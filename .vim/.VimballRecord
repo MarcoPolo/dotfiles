@@ -1,0 +1,2 @@
+xmledit-1.9.1.vba: call delete('/home/marco/.vim/ftplugin/xml.vim')|call delete('/home/marco/.vim/doc/xml-plugin.txt')
+supertab.vba: call delete('/home/marco/.vim/doc/supertab.txt')|call delete('/home/marco/.vim/plugin/supertab.vim')

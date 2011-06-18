@@ -1,7 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/marco/chrome_extensions/set_page_color'
-let g:netrw_dirhist_2='/usr/share/vim/vim72/colors'
-let g:netrw_dirhist_3='/home/marco/songswithfriends/facebook-runwithfriends-f59ead9/templates'
-let g:netrw_dirhist_4='/usr/lib/python2.7'
-let g:netrw_dirhist_5='/home/marco/chrome_extensions/GroovesharkSync'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/usr/share/X11/xorg.conf.d'
+let g:netrw_dirhist_2='/home/marco/RA3/Red Alert 3/#readme#'
+let g:netrw_dirhist_3='/home/marco/.ssh'
+let g:netrw_dirhist_4='/etc/modprobe.d'

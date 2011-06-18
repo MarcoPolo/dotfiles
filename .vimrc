@@ -1,34 +1,99 @@
-"custom key mappings
-"this is helpful in moving in btwn tabs
-:map <S-j> :tabp<CR>
-:map <S-k> :tabn<CR>
-:set t_Co=256
 
 
-:set ts=4
-:set sw=4
-:set autoindent
+colorscheme zenburn
 
-"Pretty colors!
-:colorscheme zenburn
+"load syntastic syntax highlighter for js
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=0
 
-"remap save and remap esc to thing below tilde (`)
-:map ;w :w<cr>
-:imap ` <esc> 
-:map ` <esc> 
 
-"highlight stuff
-:set hlsearch
-:set incsearch
+"ability to maximize window using C-W o
+"
 
-"Turn off the bg so you can see the desktop
-:hi Normal ctermbg=none
-:hi Normal ctermbg=none
+nnoremap <C-W>O :call MaximizeToggle ()<CR>
+nnoremap <C-W>o :call MaximizeToggle ()<CR>
+nnoremap <C-W><C-O> :call MaximizeToggle ()<CR>
 
-if !exists("autocommands_loaded")
-  let autocommands_loaded = 1
-  autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python
-endif
+function! MaximizeToggle()
+    if exists("s:maximize_session")
+        exec "source " . s:maximize_session
+        call delete(s:maximize_session)
+        unlet s:maximize_session
+        let &hidden=s:maximize_hidden_save
+        unlet s:maximize_hidden_save
+    else
+        let s:maximize_hidden_save = &hidden
+        let s:maximize_session = tempname()
+        set hidden
+        exec "mksession! " . s:maximize_session
+        only
+    endif
+endfunction
 
-" This beauty remembers where you were the last time you edited the file, and returns to the same position.
-au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+nnoremap <silent> <F9> :TagbarToggle<CR>
+
+
+map ;w :w<cr>
+map ` <esc>
+imap ` <esc>
+
+call pathogen#infect()
+
+set smartindent
+set ts=4
+set shiftwidth=4
+set expandtab
+
+set hidden
+
+set t_Co=256
+
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+
+set hlsearch
+set incsearch
+
+
+set number
+set ts=4
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+set foldmethod=indent
+set foldlevel=99
+
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+map <s-j> :tabp<cr>
+map <s-k> :tabn<cr>
+
+
+map <leader>td <Plug>TaskList
+
+
+map <leader>g :GundoToggle<CR>
+
+let g:pyflakes_use_quickfix = 0
+
+au Filetype python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
+
+
+syntax on
+filetype on
+filetype plugin indent on
+
+"To get a clear background
+
+highlight Normal ctermbg=none

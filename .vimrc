@@ -97,3 +97,5 @@ filetype plugin indent on
 "To get a clear background
 
 highlight Normal ctermbg=none
+
+loadview

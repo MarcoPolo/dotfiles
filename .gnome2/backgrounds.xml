@@ -2,26 +2,18 @@
 <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
 <wallpapers>
   <wallpaper deleted="false">
-    <name>Freedom.jpg</name>
-    <filename>/home/marco/wallpapers/Freedom.jpg</filename>
-    <options>stretched</options>
-    <shade_type>vertical-gradient</shade_type>
+    <name>Holes</name>
+    <filename>/usr/share/backgrounds/Holes_by_FireCobold.jpg</filename>
+    <options>zoom</options>
+    <shade_type>solid</shade_type>
     <pcolor>#000000000000</pcolor>
     <scolor>#000000000000</scolor>
   </wallpaper>
   <wallpaper deleted="false">
-    <name>Ubuntu</name>
-    <filename>/usr/share/backgrounds/warty-final-ubuntu.png</filename>
-    <options>zoom</options>
-    <shade_type>solid</shade_type>
-    <pcolor>#2c2c00001e1e</pcolor>
-    <scolor>#2c2c00001e1e</scolor>
-  </wallpaper>
-  <wallpaper deleted="false">
-    <name>wallpaper-hneda-planeta-3840x2160.jpg</name>
-    <filename>/home/marco/Pictures/wallpaper-hneda-planeta-3840x2160.jpg</filename>
-    <options>spanned</options>
-    <shade_type>solid</shade_type>
+    <name>Caravan.jpg</name>
+    <filename>/home/marco/wallpapers/Caravan.jpg</filename>
+    <options>stretched</options>
+    <shade_type>vertical-gradient</shade_type>
     <pcolor>#000000000000</pcolor>
     <scolor>#000000000000</scolor>
   </wallpaper>
@@ -114,12 +106,12 @@
     <scolor>#000000000000</scolor>
   </wallpaper>
   <wallpaper deleted="false">
-    <name>bowbay2-sichr-3840x1080.jpg</name>
-    <filename>/home/marco/Pictures/bowbay2-sichr-3840x1080.jpg</filename>
-    <options>spanned</options>
-    <shade_type>vertical-gradient</shade_type>
-    <pcolor>#000000000000</pcolor>
-    <scolor>#000000000000</scolor>
+    <name>Flowers.jpg</name>
+    <filename>/home/marco/wallpapers/Flowers.jpg</filename>
+    <options>zoom</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#2c2c00001e1e</pcolor>
+    <scolor>#2c2c00001e1e</scolor>
   </wallpaper>
   <wallpaper deleted="false">
     <name>Touch the light</name>
@@ -138,18 +130,10 @@
     <scolor>#000000000000</scolor>
   </wallpaper>
   <wallpaper deleted="false">
-    <name>estany_de_sant_maurici-3840x1080.jpg</name>
-    <filename>/home/marco/Pictures/estany_de_sant_maurici-3840x1080.jpg</filename>
-    <options>spanned</options>
-    <shade_type>vertical-gradient</shade_type>
-    <pcolor>#000000000000</pcolor>
-    <scolor>#000000000000</scolor>
-  </wallpaper>
-  <wallpaper deleted="false">
-    <name>1920.jpg</name>
-    <filename>/home/marco/Downloads/1920.jpg</filename>
+    <name>White flowers</name>
+    <filename>/usr/share/backgrounds/White_flowers_by_Garuna_bor-bor.jpg</filename>
     <options>zoom</options>
-    <shade_type>vertical-gradient</shade_type>
+    <shade_type>solid</shade_type>
     <pcolor>#000000000000</pcolor>
     <scolor>#000000000000</scolor>
   </wallpaper>
@@ -186,14 +170,6 @@
     <scolor>#000000000000</scolor>
   </wallpaper>
   <wallpaper deleted="false">
-    <name>Caravan.jpg</name>
-    <filename>/home/marco/wallpapers/Caravan.jpg</filename>
-    <options>stretched</options>
-    <shade_type>vertical-gradient</shade_type>
-    <pcolor>#000000000000</pcolor>
-    <scolor>#000000000000</scolor>
-  </wallpaper>
-  <wallpaper deleted="false">
     <name>Variations On Natty Narwhal 1</name>
     <filename>/usr/share/backgrounds/Variations-On-Natty-Narwhal-1_by_madeinkobaia.jpg</filename>
     <options>zoom</options>
@@ -202,35 +178,19 @@
     <scolor>#000000000000</scolor>
   </wallpaper>
   <wallpaper deleted="false">
-    <name>accelerator3x3840.jpg</name>
-    <filename>/home/marco/Pictures/accelerator3x3840.jpg</filename>
-    <options>spanned</options>
-    <shade_type>solid</shade_type>
-    <pcolor>#000000000000</pcolor>
-    <scolor>#000000000000</scolor>
-  </wallpaper>
-  <wallpaper deleted="false">
-    <name>Holes</name>
-    <filename>/usr/share/backgrounds/Holes_by_FireCobold.jpg</filename>
-    <options>zoom</options>
-    <shade_type>solid</shade_type>
-    <pcolor>#000000000000</pcolor>
-    <scolor>#000000000000</scolor>
-  </wallpaper>
-  <wallpaper deleted="false">
-    <name>White flowers</name>
-    <filename>/usr/share/backgrounds/White_flowers_by_Garuna_bor-bor.jpg</filename>
-    <options>zoom</options>
-    <shade_type>solid</shade_type>
-    <pcolor>#000000000000</pcolor>
-    <scolor>#000000000000</scolor>
-  </wallpaper>
-  <wallpaper deleted="false">
-    <name>drop3840x1080.jpg</name>
-    <filename>/home/marco/Pictures/drop3840x1080.jpg</filename>
-    <options>spanned</options>
+    <name>Freedom.jpg</name>
+    <filename>/home/marco/wallpapers/Freedom.jpg</filename>
+    <options>stretched</options>
     <shade_type>vertical-gradient</shade_type>
     <pcolor>#000000000000</pcolor>
     <scolor>#000000000000</scolor>
+  </wallpaper>
+  <wallpaper deleted="false">
+    <name>Ubuntu</name>
+    <filename>/usr/share/backgrounds/warty-final-ubuntu.png</filename>
+    <options>zoom</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#2c2c00001e1e</pcolor>
+    <scolor>#2c2c00001e1e</scolor>
   </wallpaper>
 </wallpapers>

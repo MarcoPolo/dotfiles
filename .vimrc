@@ -1,6 +1,12 @@
-
+filetype off
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+"call pathogen#infect()
 
 colorscheme zenburn
+
+"Give gundo <F5> functionality :D
+nnoremap <F5> :GundoToggle<CR>
 
 "load syntastic syntax highlighter for js
 set statusline+=%#warningmsg#
@@ -40,7 +46,6 @@ map ;w :w<cr>
 map ` <esc>
 imap ` <esc>
 
-call pathogen#infect()
 
 set smartindent
 set ts=4
@@ -51,10 +56,6 @@ set hidden
 
 set t_Co=256
 
-syntax on
-filetype on
-filetype plugin on
-filetype indent on
 
 set hlsearch
 set incsearch
@@ -62,8 +63,7 @@ set incsearch
 
 set number
 set ts=4
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+
 
 set foldmethod=indent
 set foldlevel=99
@@ -91,11 +91,10 @@ set completeopt=menuone,longest,preview
 
 
 syntax on
-filetype on
-filetype plugin indent on
+"filetype on
+"filetype plugin indent on
 
 "To get a clear background
 
 highlight Normal ctermbg=none
 
-loadview

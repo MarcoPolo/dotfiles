@@ -20,6 +20,9 @@ set -o vi
 
 #append path
 export PATH=$PATH:/home/marco/appengine/google_appengine/
+export PATH=$PATH:/home/marco/android/android-sdk-linux_x86/platform-tools/
+export PATH=$PATH:/home/marco/android/android-sdk-linux_x86/tools/
+
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000

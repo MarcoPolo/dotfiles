@@ -1,12 +1,12 @@
 filetype off
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
-"call pathogen#infect()
+call pathogen#infect()
 
 colorscheme zenburn
 
 "Give gundo <F5> functionality :D
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <F12> :GundoToggle<CR>
 
 "load syntastic syntax highlighter for js
 set statusline+=%#warningmsg#

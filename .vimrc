@@ -3,7 +3,7 @@ call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 call pathogen#infect()
 
-colorscheme zenburn
+colorscheme delek
 
 "Give gundo <F5> functionality :D
 nnoremap <F12> :GundoToggle<CR>

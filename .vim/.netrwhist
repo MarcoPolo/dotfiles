@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/marco/android/code/Notepadv1'
 let g:netrw_dirhist_2='/tmp/hello/src'
 let g:netrw_dirhist_3='/home/marco/code/Kitchen/employee'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/home/marco/code/Kitchen/menu'
 let g:netrw_dirhist_6='/home/marco/code/SharkByte/templates'
 let g:netrw_dirhist_7='/home/marco/code/SharkByte/static'
 let g:netrw_dirhist_8='/home/marco/code/SharkByte/menu'
+let g:netrw_dirhist_9='/home/marco/.ssh'

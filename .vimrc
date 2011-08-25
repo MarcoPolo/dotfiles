@@ -43,8 +43,6 @@ nnoremap <silent> <F9> :TagbarToggle<CR>
 
 
 map ;w :w<cr>
-map ` <esc>
-imap ` <esc>
 
 
 set smartindent

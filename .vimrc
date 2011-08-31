@@ -15,9 +15,13 @@ set statusline+=%*
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=0
 
+" Map Nerd Tree to F3
+
+map <F3> <ESC>:NERDTreeToggle<CR>
 
 "ability to maximize window using C-W o
-"
+
+
 
 nnoremap <C-W>O :call MaximizeToggle ()<CR>
 nnoremap <C-W>o :call MaximizeToggle ()<CR>
@@ -91,8 +95,8 @@ set completeopt=menuone,longest,preview
 
 
 syntax on
-"filetype on
-"filetype plugin indent on
+filetype on
+filetype plugin indent on
 
 "To get a clear background
 

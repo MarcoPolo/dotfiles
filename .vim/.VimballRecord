@@ -1,1 +1,2 @@
 tagbar.vba: call delete('/home/marco/.vim/plugin/tagbar.vim')|call delete('/home/marco/.vim/syntax/tagbar.vim')|call delete('/home/marco/.vim/doc/tagbar.txt')
+DrawIt.vba: call delete('/home/marco/.vim/plugin/DrawItPlugin.vim')|call delete('/home/marco/.vim/plugin/cecutil.vim')|call delete('/home/marco/.vim/autoload/DrawIt.vim')|call delete('/home/marco/.vim/doc/DrawIt.txt')

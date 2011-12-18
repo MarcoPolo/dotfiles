@@ -1,9 +1,13 @@
+colorscheme molokai
+
+
+set pastetoggle=<F10>
+
 filetype off
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 call pathogen#infect()
 
-colorscheme delek
 
 "Give gundo <F5> functionality :D
 nnoremap <F12> :GundoToggle<CR>

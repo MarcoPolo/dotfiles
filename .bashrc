@@ -114,9 +114,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 mkcd() { mkdir -p "$@" && cd "$_"; }
+v() { vim -p $@; }
 alias lol='echo "lol"'
 export PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;29m\]$\[\e[m\] \[\e[0;33m\]' 
 
 let randnum=$RANDOM%12660
 alias macplz="openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'"
 cowsay -f tux $(sed -n  "$randnum,$randnum p" ~/dotfiles/rexyLines)
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/marco/appengine/google_appengine/:/home/marco/android/android-sdk-linux_x86/platform-tools/:/home/marco/android/android-sdk-linux_x86/tools/:/opt/msp430-gcc-4.4.5/bin:/opt/msp430-gcc-4.4.5/bin

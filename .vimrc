@@ -13,11 +13,11 @@ call pathogen#infect()
 nnoremap <F12> :GundoToggle<CR>
 
 "load syntastic syntax highlighter for js
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=0
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_enable_signs=1
+"let g:syntastic_auto_loc_list=1
 
 " Map Nerd Tree to F3
 

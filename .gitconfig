@@ -8,3 +8,6 @@
     dump = cat-file -p
 [user]
 	name = Marco Munizaga
+	email = marco.munizaga@grooveshark.com
+[diff]
+	tool = vimdiff

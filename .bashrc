@@ -22,6 +22,7 @@ set -o vi
 export PATH=$PATH:/home/marco/appengine/google_appengine/
 export PATH=$PATH:/home/marco/android/android-sdk-linux_x86/platform-tools/
 export PATH=$PATH:/home/marco/android/android-sdk-linux_x86/tools/
+export PATH=$PATH:/home/marco/.gem/ruby/1.8/bin/
 
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
@@ -121,4 +122,4 @@ export PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;29m\]$\[\e[m\] 
 let randnum=$RANDOM%12660
 alias macplz="openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'"
 cowsay -f tux $(sed -n  "$randnum,$randnum p" ~/dotfiles/rexyLines)
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/marco/appengine/google_appengine/:/home/marco/android/android-sdk-linux_x86/platform-tools/:/home/marco/android/android-sdk-linux_x86/tools/:/opt/msp430-gcc-4.4.5/bin:/opt/msp430-gcc-4.4.5/bin
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/marco/appengine/google_appengine/:/home/marco/android/android-sdk-linux_x86/platform-tools/:/home/marco/android/android-sdk-linux_x86/tools/:/opt/msp430-gcc-4.4.5/bin:/opt/msp430-gcc-4.4.5/bin:~/scripts

@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/marco/code/beluga/pub/resources/js/geography'
 let g:netrw_dirhist_2='/home/marco/scripts'
 let g:netrw_dirhist_3='/home/marco/code/beluga'
 let g:netrw_dirhist_4='/home/marco/code/beluga/pub/resources'
+let g:netrw_dirhist_5='/home/marco/code/shortcutThing/site/public'
+let g:netrw_dirhist_6='/home/marco/code/beluga/pub/resources/js'

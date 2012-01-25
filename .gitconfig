@@ -11,3 +11,7 @@
 	email = marco.munizaga@grooveshark.com
 [diff]
 	tool = vimdiff
+[merge]
+	tool = vim
+[mergetool "vim"]
+	cmd = vim \"+Gdiff\" $MERGED

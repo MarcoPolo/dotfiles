@@ -1,4 +1,4 @@
-colorscheme molokai
+colorscheme jellybeans
 
 
 set pastetoggle=<F10>
@@ -8,6 +8,13 @@ call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 call pathogen#infect()
 
+"file finder
+nnoremap <Leader>o :FufFile<CR>
+
+"Indent selected lines
+
+vnoremap < <gv
+vnoremap > >gv
 
 "Give gundo <F5> functionality :D
 nnoremap <F12> :GundoToggle<CR>
@@ -25,6 +32,8 @@ map <F3> <ESC>:NERDTreeToggle<CR>
 
 "ability to maximize window using C-W o
 
+"Replace
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 
 nnoremap <C-W>O :call MaximizeToggle ()<CR>
@@ -55,6 +64,7 @@ map ;w :w<cr>
 
 set smartindent
 set ts=4
+set softtabstop=4
 set shiftwidth=4
 set expandtab
 
@@ -87,6 +97,9 @@ map <leader>td <Plug>TaskList
 
 
 map <leader>g :GundoToggle<CR>
+
+"dangerous save git HEAD automatically
+map <leader>h <c-h>:Gwrite!<CR>:wq<CR>
 
 let g:pyflakes_use_quickfix = 0
 

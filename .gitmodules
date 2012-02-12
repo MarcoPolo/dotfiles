@@ -52,3 +52,15 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/tslime"]
+	path = .vim/bundle/tslime
+	url = https://github.com/kikijump/tslime.vim.git
+[submodule ".vim/bundle/fuzzyFinder"]
+	path = .vim/bundle/fuzzyFinder
+	url = https://github.com/vim-scripts/FuzzyFinder.git
+[submodule ".vim/bundle/L9"]
+	path = .vim/bundle/L9
+	url = https://github.com/vim-scripts/L9.git
+[submodule ".vim/bundle/autocomplpop"]
+	path = .vim/bundle/autocomplpop
+	url = https://github.com/vim-scripts/AutoComplPop.git

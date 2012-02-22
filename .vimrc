@@ -1,5 +1,6 @@
 colorscheme jellybeans
 
+let g:acp_behaviorSnipmateLength=1
 
 set pastetoggle=<F10>
 

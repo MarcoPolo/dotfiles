@@ -115,6 +115,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 mkcd() { mkdir -p "$@" && cd "$_"; }
+access() { echo "$@" && echo 'access granted';}
+
 v() { vim -p $@; }
 alias lol='echo "lol"'
 export PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;29m\]$\[\e[m\] \[\e[0;33m\]' 

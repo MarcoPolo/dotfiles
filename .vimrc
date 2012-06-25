@@ -1,3 +1,4 @@
+set t_Co=256
 colorscheme jellybeans
 
 "let g:acp_behaviorSnipmateLength=1
@@ -74,7 +75,6 @@ set expandtab
 
 set hidden
 
-set t_Co=256
 
 
 set hlsearch
@@ -121,6 +121,8 @@ filetype plugin indent on
 
 highlight Normal ctermbg=none
 
+"remap paste toggle to <F7>
+set pastetoggle=<F7>
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0

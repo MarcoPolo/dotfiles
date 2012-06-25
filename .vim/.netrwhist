@@ -1,2 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/marco/code/central-interface/views'
+let g:netrw_dirhist_2='/home/marco/code/beluga/lib/Artist'
+let g:netrw_dirhist_3='/home/marco/code/gsWWW/pub'

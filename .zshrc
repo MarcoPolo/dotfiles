@@ -29,7 +29,7 @@ ZSH_THEME="miloshadzic"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git debian lol vi-mode)
+plugins=(git archlinux lol vi-mode sprunge)
 
 #lets open anything python, cpp, or js with vim
 alias -s js=vim
@@ -48,7 +48,7 @@ mkcd() { mkdir -p "$@" && cd "$_"; }
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/marco/appengine/google_appengine/:/home/marco/android/android-sdk-linux_x86/platform-tools/:/home/marco/android/android-sdk-linux_x86/tools/:/opt/msp430-gcc-4.4.5/bin:/opt/msp430-gcc-4.4.5/bin:~/scripts:~/.gem/ruby/1.8/bin:.gem/ruby/1.9.1/bin
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/marco/appengine/google_appengine/:/home/marco/android/android-sdk-linux_x86/platform-tools/:/home/marco/android/android-sdk-linux_x86/tools/:/opt/msp430-gcc-4.4.5/bin:/opt/msp430-gcc-4.4.5/bin:~/scripts:~/.gem/ruby/1.8/bin:~/.gem/ruby/1.9.1/bin
 
 cowsay -f tux $(sed -n  "$randnum,$randnum p" ~/dotfiles/rexyLines) | lolcat
 

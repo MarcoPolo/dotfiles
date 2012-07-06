@@ -3,7 +3,10 @@ colorscheme jellybeans
 
 "let g:acp_behaviorSnipmateLength=1
 
+let g:neocomplcache_enable_at_startup = 1
+
 set pastetoggle=<F10>
+set pastetoggle=<F7>
 
 filetype off
 call pathogen#helptags()
@@ -18,7 +21,12 @@ nnoremap <Leader>o :FufFile<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-"Give gundo <F5> functionality :D
+"powerline
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show unicode glyphs
+
+"Give gundo <F12> functionality :D
 nnoremap <F12> :GundoToggle<CR>
 
 "load syntastic syntax highlighter for js
@@ -163,8 +171,8 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 

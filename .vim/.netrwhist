@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/etc/rc.d'
 let g:netrw_dirhist_2='/home/marco/code/winlist/node_modules'
 let g:netrw_dirhist_3='/home/marco/.oh-my-zsh'
+let g:netrw_dirhist_4='/home/marco/hadoop/hive-0.8.1-bin/conf'
+let g:netrw_dirhist_5='/home/marco/test/stripeCTF2.0/level03-code'
+let g:netrw_dirhist_6='/etc/rc.d'

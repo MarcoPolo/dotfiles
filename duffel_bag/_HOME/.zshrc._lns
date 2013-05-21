@@ -28,13 +28,14 @@ bindkey '^[[B' down-line-or-search
 bindkey '^R' history-incremental-search-backward
 
 export PATH=~/bin:$PATH
+export PATH=~/.gem/ruby/1.9.1/bin:$PATH
 
 
 export NEMO_LOCATION=198.61.196.240
 export NEMO_PORT=81
 
 #Silly qoutes
-qouteFile=~/dotfiles/rexyLines
+qouteFile=~/rexyLines.txt
 qouteCount=$(wc -l $qouteFile | awk '{print $1}')
 let randnum=$RANDOM%$qouteCount
 cowsay -f tux $(sed -n  "$randnum,$randnum p" $qouteFile) | lolcat

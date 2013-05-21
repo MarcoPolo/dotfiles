@@ -1,0 +1,156 @@
+set encoding=utf-8
+set laststatus=2
+set nocompatible               " be iMproved
+ filetype off                   " required!
+
+ set rtp+=~/.vim/bundle/vundle/
+ call vundle#rc()
+
+
+ "" I Hate swap files
+ set noswapfile
+
+ " let Vundle manage Vundle
+ " required! 
+ Bundle 'gmarik/vundle'
+
+ " My Bundles here:
+ "
+ " original repos on github
+ Bundle 'tpope/vim-fugitive'
+ Bundle 'tpope/vim-fireplace.git'
+ Bundle 'Lokaltog/vim-easymotion'
+ Bundle 'sjl/gundo.vim'
+ Bundle 'scrooloose/nerdtree'
+" Bundle 'jgdavey/tslime.vim'
+ Bundle 'Shougo/neocomplcache.git'
+" Bundle 'Shougo/neosnippet.git'
+ Bundle 'vim-scripts/VimClojure'
+ Bundle 'Lokaltog/powerline'
+ " vim-scripts repos
+ Bundle 'L9'
+ Bundle 'FuzzyFinder'
+" Bundle 'git://git.wincent.com/command-t.git'
+
+ " Ctrl-Space eval selection
+ vnoremap <C-Space> :Eval<cr>
+ vmap <C-@> <C-Space>
+
+"Fuzzy mapping
+ "Open a file
+    map <leader>o :FufFile<cr> 
+ "Open a buffer
+    map <leader>b :FufBuffer<cr> 
+ "Go to jumplist
+    map <leader>j :FufJumpList<cr> 
+ "Go to line
+    map <leader>l :FufBuffer<cr> 
+ 
+" power line  
+ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+ filetype plugin indent on     " required!
+
+ colorscheme jellybeans
+ syntax on
+
+ set pastetoggle=<F10>
+ set pastetoggle=<F7>
+
+"Indent selected lines
+ 
+vnoremap < <gv
+vnoremap > >gv
+
+set number
+
+"Remap windows in vim
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+" Remap tabs in vim
+map <s-j> :tabp<cr>
+map <s-k> :tabn<cr>
+
+map <A-j> :tabp<cr>
+
+
+set hlsearch
+set incsearch
+
+
+" Map Nerd Tree to F3
+ map <F3> <ESC>:NERDTreeToggle<CR>
+
+"Give gundo <F12> functionality :D
+nnoremap <F12> :GundoToggle<CR>
+
+"4 spaces
+set ts=4
+set sw=4
+set expandtab
+
+" 2 spaces for some languages
+au FileType python setl sw=2 sts=2 et
+au FileType javascript setl sw=2 sts=2 et
+au FileType clojure setl sw=2 sts=2 et
+
+" Interpret clojurescript files as clojure
+au BufNewFile,BufRead *.cljs set filetype=clojure
+
+"Neocomplecache settings
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underscore completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Sets minimum char length of syntax keyword.
+let g:neocomplcache_min_syntax_length = 3
+" buffer file name pattern that locks neocomplcache. e.g. ku.vim 
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+
+
+" Snippets  Auto complete
+" imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" Enable omni completion. Not required if they are already set elsewhere in .vimrc
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion, which require computational power and may stall the vim. 
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+ "
+ " Brief help
+ " :BundleList          - list configured bundles
+ " :BundleInstall(!)    - install(update) bundles
+ " :BundleSearch(!) foo - search(or refresh cache first) for foo
+ " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+ "
+ " see :h vundle for more details or wiki for FAQ
+ " NOTE: comments after Bundle command are not allowed..
+ "

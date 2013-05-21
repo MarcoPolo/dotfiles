@@ -1,0 +1,27 @@
+#!/bin/sh
+
+VERSION=0.18.1
+JARFILE=duffel-$VERSION-standalone.jar
+URL=https://github.com/marcopolo/duffel/blob/master/$JARFILE?raw=true
+TARGETDIR=~/.duffel
+
+mkdir -p $TARGETDIR
+if [ ! -f $TARGETDIR/$JARFILE ]; then
+    rm -f $TARGETDIR/*.jar
+    wget $URL -O $TARGETDIR/$JARFILE
+    if [ "$?" != "0" ]; then
+        rm $TARGETDIR/$JARFILE
+        echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        echo "
+There was a problem updating the duffel jar, please update this
+duffel script by going to the github page and re-downloading it:
+https://github.com/mediocregopher/duffel
+"
+        echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        exit 1
+    fi
+fi
+
+echo "Booting up JVM" >&2
+
+java -jar $TARGETDIR/$JARFILE $@

@@ -78,4 +78,4 @@
 	url = https://github.com/hail2u/vim-css3-syntax.git
 [submodule ".vim/bundle/vimClojure"]
 	path = .vim/bundle/vimClojure
-	url = git@github.com:vim-scripts/VimClojure.git
+	url = https://github.com/vim-scripts/VimClojure.git

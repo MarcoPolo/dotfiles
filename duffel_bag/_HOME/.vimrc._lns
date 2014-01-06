@@ -3,56 +3,114 @@ set laststatus=2
 set nocompatible               " be iMproved
  filetype off                   " required!
 
+syntax keyword rubyControl not conceal cchar=¬
+syntax keyword clojureKeyword lambda conceal cchar=λ
+syntax keyword clojureKeyword fn conceal cchar=λ
+set conceallevel=2
+
  set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
 
+"show tests status
+:map <Leader>t :echo system('cat /tmp/tests.status')<cr>
 
- "" I Hate swap files
- set noswapfile
+"golang
+set runtimepath+=$GOROOT/misc/vim
 
- " let Vundle manage Vundle
- " required! 
- Bundle 'gmarik/vundle'
 
- " My Bundles here:
- "
- " original repos on github
- Bundle 'tpope/vim-fugitive'
- Bundle 'tpope/vim-fireplace.git'
- Bundle 'Lokaltog/vim-easymotion'
- Bundle 'sjl/gundo.vim'
- Bundle 'scrooloose/nerdtree'
+"" I Hate swap files
+set noswapfile
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+"
+" My Bundles here:
+"
+" original repos on github
+Bundle 'jamessan/vim-gnupg'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fireplace.git'
+Bundle 'tpope/vim-surround'
+Bundle 'sjl/gundo.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'jpalardy/vim-slime'
+"Bundle 'jnwhiteh/vim-golang'
+Bundle 'digitaltoad/vim-jade'
 " Bundle 'jgdavey/tslime.vim'
- Bundle 'Shougo/neocomplcache.git'
+Bundle 'Shougo/neocomplcache.git'
 " Bundle 'Shougo/neosnippet.git'
- Bundle 'vim-scripts/VimClojure'
- Bundle 'Lokaltog/powerline'
+" Bundle 'vim-scripts/VimClojure'
+Bundle 'Lokaltog/powerline'
  " vim-scripts repos
- Bundle 'L9'
- Bundle 'FuzzyFinder'
+" Bundle 'L9'
+" Bundle 'vim-scripts/paredit.vim'
 " Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-markdown'
+Bundle 'vim-scripts/DrawIt'
+" Bundle 'ehamberg/vim-cute-python'
+"Bundle 'kovisoft/slimv'
+Bundle 'kien/ctrlp.vim'
+Bundle 'guns/vim-sexp'
+Bundle 'guns/vim-clojure-static'
+Bundle 'tpope/vim-sexp-mappings-for-regular-people'
+Bundle 'guns/jellyx.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'kien/rainbow_parentheses.vim'
 
- " Ctrl-Space eval selection
- vnoremap <C-Space> :Eval<cr>
- vmap <C-@> <C-Space>
+"  Parentheses colours using Solarized
+let g:rbpt_colorpairs = [
+  \ [ '13', '#6c71c4'],
+  \ [ '5',  '#d33682'],
+  \ [ '1',  '#dc322f'],
+  \ [ '9',  '#cb4b16'],
+  \ [ '3',  '#b58900'],
+  \ [ '2',  '#859900'],
+  \ [ '6',  '#2aa198'],
+  \ [ '4',  '#268bd2'],
+  \ ]
+ 
+" Enable rainbow parentheses for all buffers
+augroup rainbow_parentheses
+  au!
+  au VimEnter * RainbowParenthesesActivate
+  au BufEnter * RainbowParenthesesLoadRound
+  au BufEnter * RainbowParenthesesLoadSquare
+  au BufEnter * RainbowParenthesesLoadBraces
+augroup END
 
-"Fuzzy mapping
- "Open a file
-    map <leader>o :FufFile<cr> 
- "Open a buffer
-    map <leader>b :FufBuffer<cr> 
- "Go to jumplist
-    map <leader>j :FufJumpList<cr> 
- "Go to line
-    map <leader>l :FufBuffer<cr> 
+" Align multiline text in clojure
+let g:clojure_align_multiline_strings = 1
+
+"
+"vim slime
+let g:slime_target = "tmux"
+let g:slime_paste_file = tempname()
+
+" Ctrl-Space eval selection
+vnoremap <C-Space> :Eval<cr>
+vmap <C-@> <C-Space>
  
 " power line  
- set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
- filetype plugin indent on     " required!
 
- colorscheme jellybeans
+filetype plugin indent on     " required!
+se lisp
+
+let g:sexp_enable_insert_mode_mappings = 0
+
+" let g:jellyx_show_whitespace = 1
+" let g:solarized_termcolors=256
+
  syntax on
+"syntax enable
+
+set background=light
+colorscheme solarized
+" colorscheme jellybeans
+" colorscheme jellyx
 
  set pastetoggle=<F10>
  set pastetoggle=<F7>
@@ -64,6 +122,8 @@ vnoremap > >gv
 
 set number
 
+let g:paredit_smartjump=1
+
 "Remap windows in vim
 map <c-j> <c-w>j
 map <c-k> <c-w>k
@@ -71,10 +131,10 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 
 " Remap tabs in vim
-map <s-j> :tabp<cr>
-map <s-k> :tabn<cr>
+map <s-h> :tabp<cr>
+map <s-l> :tabn<cr>
 
-map <A-j> :tabp<cr>
+map ;w :w<CR>
 
 
 set hlsearch
@@ -95,7 +155,9 @@ set expandtab
 " 2 spaces for some languages
 au FileType python setl sw=2 sts=2 et
 au FileType javascript setl sw=2 sts=2 et
-au FileType clojure setl sw=2 sts=2 et
+au FileType clojure setl sw=2 sts=2 et 
+se lisp
+
 
 " Interpret clojurescript files as clojure
 au BufNewFile,BufRead *.cljs set filetype=clojure
@@ -143,6 +205,9 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+set list
+set listchars=trail:░
 
  "
  " Brief help

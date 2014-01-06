@@ -125,3 +125,5 @@ let randnum=$RANDOM%12660
 alias macplz="openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'"
 cowsay -f tux $(sed -n  "$randnum,$randnum p" ~/dotfiles/rexyLines)
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/marco/appengine/google_appengine/:/home/marco/android/android-sdk-linux_x86/platform-tools/:/home/marco/android/android-sdk-linux_x86/tools/:/opt/msp430-gcc-4.4.5/bin:/opt/msp430-gcc-4.4.5/bin:~/scripts
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

@@ -2,7 +2,8 @@ ZSH=$HOME/.oh-my-zsh
 
 
 ZSH_THEME="miloshadzic"
-plugins=(git archlinux lol sprunge vi-mode)
+plugins=(git sprunge )
+
 
 #lets open anything python, cpp, or js with vim
 alias -s js=vim
@@ -27,8 +28,22 @@ bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
 bindkey '^R' history-incremental-search-backward
 
+export ANDROID_HOME=$HOME/android-sdk
+export RUBY_HOME=$HOME/.gem/ruby/1.9.3
+export NPM_HOME=/usr/local/share/npm
+
 export PATH=~/bin:$PATH
-export PATH=~/.gem/ruby/1.9.1/bin:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$RUBY_HOME/bin:$PATH
+export PATH=$NPM_HOME/bin:$PATH
+
+
+export PATH=/usr/local/share/python:$PATH
+
+export GOROOT=/usr/local/Cellar/go/1.0.3
+
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 
 
 export NEMO_LOCATION=198.61.196.240
@@ -39,3 +54,12 @@ qouteFile=~/rexyLines.txt
 qouteCount=$(wc -l $qouteFile | awk '{print $1}')
 let randnum=$RANDOM%$qouteCount
 cowsay -f tux $(sed -n  "$randnum,$randnum p" $qouteFile) | lolcat
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+set -o vi
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
+bindkey '^R' history-incremental-search-backward
+
+export EDITOR=vim

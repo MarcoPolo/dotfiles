@@ -38,3 +38,6 @@ bind : command-prompt
 
 # vi-style controls for copy mode
 setw -g mode-keys vi
+
+#stupid escape
+set -s escape-time 0

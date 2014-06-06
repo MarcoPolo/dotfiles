@@ -11,6 +11,7 @@ alias -s py=vim
 alias -s cpp=vim
 
 source $ZSH/oh-my-zsh.sh
+source ~/.prismaticrc
 
 #256 colors
 export TERM="xterm-256color"
@@ -66,3 +67,20 @@ bindkey '^[[B' down-line-or-search
 bindkey '^R' history-incremental-search-backward
 
 export EDITOR=vim
+
+function setjdk() {  
+  if [ $# -ne 0 ]; then  
+   removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'  
+   if [ -n "${JAVA_HOME+x}" ]; then  
+    removeFromPath $JAVA_HOME  
+   fi  
+   export JAVA_HOME=`/usr/libexec/java_home -v $@`  
+   export PATH=$JAVA_HOME/bin:$PATH  
+  fi  
+ }  
+ function removeFromPath() {  
+  export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")  
+ }
+setjdk 1.6
+
+export PATH=~/prismatic/config/bin:~/bin:$PATH

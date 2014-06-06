@@ -43,7 +43,7 @@ Bundle 'Shougo/neocomplcache.git'
 " Bundle 'vim-scripts/VimClojure'
 Bundle 'Lokaltog/powerline'
  " vim-scripts repos
-" Bundle 'L9'
+Bundle 'L9'
 " Bundle 'vim-scripts/paredit.vim'
 " Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'kchmck/vim-coffee-script'
@@ -59,6 +59,7 @@ Bundle 'guns/jellyx.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'typedclojure/vim-typedclojure'
+Bundle 'FuzzyFinder'
 
 " Align multiline text in clojure
 let g:clojure_align_multiline_strings = 1
@@ -210,6 +211,9 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 set list
 set listchars=trail:░
+
+map ,f :FufFile **/<CR>
+map ,b :FufBuffer **/<CR>
 
  "
  " Brief help

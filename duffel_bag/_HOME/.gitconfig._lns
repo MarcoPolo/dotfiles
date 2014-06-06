@@ -6,9 +6,15 @@
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     type = cat-file -t
     dump = cat-file -p
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+    lgd = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p
+    df = diff --color --color-words --abbrev
+	d = difftool
+	up = "!git remote update -p; git merge --ff-only @{u}"
 [user]
 	name = Marco Munizaga
-	email = marco.munizaga@ufl.edu
+	email = marco@marcopolo.io
 [diff]
 	tool = vimdiff
 [merge]
@@ -17,3 +23,13 @@
 	cmd = vim \"+Gdiff\" $MERGED
 [core]
 	excludesfile = /Users/marco/.gitignore_global
+[difftool]
+	prompt = false
+[push]
+	default = simple
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+

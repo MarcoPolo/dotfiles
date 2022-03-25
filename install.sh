@@ -1,11 +1,7 @@
 set -e
 
-git submodule update --init
+sh <(curl -L https://nixos.org/nix/install)
+. /home/codespace/.nix-profile/etc/profile.d/nix.sh
 
-
-if [[ "$(hostname)" == *"codespaces_"* ]]; then
-  echo "It's there."
-  mkdir -p ~/.config/nix
-  echo "sandbox = false" > ~/.config/nix/nix.conf
-  ./home/quickDevSetup.sh
-fi
+sudo mkdir -p /etc/nix
+sudo cp nix.conf /etc/nix/nix.conf

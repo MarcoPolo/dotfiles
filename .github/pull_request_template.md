@@ -1,0 +1,1 @@
+<!-- Thanks for submitting a PR this is a bare minimum repo to get nix setup with codespaces. 2 -->

@@ -9,7 +9,7 @@
         pkgs = import nixpkgs { system = system; };
       in
       {
-        packages.home-manager = inputs.home-manager.${system};
+        packages.home-manager = inputs.home-manager;
         defaultPackage = self.packages.${system}.hello;
         devShell = pkgs.mkShell {
           buildInputs = [ pkgs.hello ];

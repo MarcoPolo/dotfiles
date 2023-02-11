@@ -19,4 +19,4 @@ if [ "${CODESPACES}" = true ]; then
   sudo setfacl --remove-default /tmp
 fi
 
-nix run .#home-manager -- switch --flake ".#codespace" -b backup
+nix run github:nix-community/home-manager/release-22.11 -- switch --flake ".#codespace" -b backup

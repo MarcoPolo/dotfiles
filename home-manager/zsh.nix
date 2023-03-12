@@ -14,6 +14,10 @@
       # set $_ZL_HYPHEN to 1 to treat hyphon (-) as a normal character not a lua regexp keyword.
       export _ZL_HYPHEN=1
 
+      # fpath+=$HOME/.zsh/typewritten
+      autoload -U promptinit; promptinit
+      prompt typewritten
+
 
       export EDITOR=nvim
 
@@ -55,12 +59,12 @@
         };
       }
       {
-        name = "pure";
+        name = "typewritten";
         src = pkgs.fetchFromGitHub {
-          owner = "sindresorhus";
-          repo = "pure";
-          rev = "v1.12.0";
-          sha256 = "1h04z7rxmca75sxdfjgmiyf1b5z2byfn6k4srls211l0wnva2r5y";
+          owner = "reobin";
+          repo = "typewritten";
+          rev = "v1.5.1";
+          sha256 = "sha256-qiC4IbmvpIseSnldt3dhEMsYSILpp7epBTZ53jY18x8=";
         };
       }
     ];

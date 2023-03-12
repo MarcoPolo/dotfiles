@@ -20,7 +20,15 @@
             inherit pkgs;
             modules = [
               ./home-manager/home.nix
+              ./home-manager/codespaces.nix
+            ];
+          };
 
+        packages.homeConfigurations.server = inputs.home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            modules = [
+              ./home-manager/home.nix
+              ./home-manager/server.nix
             ];
           };
       });

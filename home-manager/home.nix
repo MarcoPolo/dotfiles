@@ -26,6 +26,20 @@
   ];
   home.sessionVariables = { EDITOR = "nvim"; FOO = "bar"; };
 
+  programs.tmux = {
+    enable = true;
+    extraConfig = builtins.concatStringsSep "\n" [
+      ''
+        bind-key C-b last-window
+      ''
+    ];
+    plugins = with pkgs.tmuxPlugins; [ ];
+    escapeTime = 0;
+    keyMode = "vi";
+    newSession = true;
+    terminal = "xterm-256color";
+  };
+
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;

@@ -31,5 +31,13 @@
               ./home-manager/server.nix
             ];
           };
+
+        packages.homeConfigurations.parallels = inputs.home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            modules = [
+              ./home-manager/home.nix
+              ./home-manager/parallels.nix
+            ];
+          };
       });
 }

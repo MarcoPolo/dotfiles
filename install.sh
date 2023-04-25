@@ -19,4 +19,8 @@ if [ "${CODESPACES}" = true ]; then
   sudo setfacl --remove-default /tmp
 fi
 
+# Not sure why this is needed? But fails without it.
+mkdir -p /nix/var/nix/profiles/per-user/codespace/ || true
+mkdir -p /nix/var/nix/gcroots/per-user/codespace/current-home/ || true
+
 nix run github:nix-community/home-manager/release-22.11 -- switch --flake ".#codespace" -b backup

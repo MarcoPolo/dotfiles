@@ -5,6 +5,11 @@
     autocd = true;
     defaultKeymap = "viins";
     initExtra = ''
+      # Updates often break this in /etc/zshrc
+      if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+        . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+      fi
+
       # Edit command in vim
       autoload -U edit-command-line
       zle -N edit-command-line
@@ -14,18 +19,11 @@
       # set $_ZL_HYPHEN to 1 to treat hyphon (-) as a normal character not a lua regexp keyword.
       export _ZL_HYPHEN=1
 
-      # fpath+=$HOME/.zsh/typewritten
-      autoload -U promptinit; promptinit
-      prompt typewritten
-
-
       export EDITOR=nvim
 
+      # Any extra stuff
       ${extraInitExtra}
     '';
-    # nix-index is broken on m1
-    # Better command not found
-    # source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
     shellAliases = { vim = "nvim"; };
     plugins = [
       {
@@ -59,12 +57,12 @@
         };
       }
       {
-        name = "typewritten";
+        name = "pure";
         src = pkgs.fetchFromGitHub {
-          owner = "reobin";
-          repo = "typewritten";
-          rev = "v1.5.1";
-          sha256 = "sha256-qiC4IbmvpIseSnldt3dhEMsYSILpp7epBTZ53jY18x8=";
+          owner = "sindresorhus";
+          repo = "pure";
+          rev = "v1.12.0";
+          sha256 = "1h04z7rxmca75sxdfjgmiyf1b5z2byfn6k4srls211l0wnva2r5y";
         };
       }
     ];

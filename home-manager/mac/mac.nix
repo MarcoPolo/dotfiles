@@ -1,7 +1,7 @@
 # see: man home-configuration.nix
 { pkgs, lib, config, ... }: {
   imports = [
-    ../nvim.nix
+    ../neovim/default.nix
     (import ../zsh.nix {
       extraInitExtra = ''
         export PATH=$PATH:~/.cargo/bin
@@ -26,10 +26,20 @@
     homeDirectory = "/Users/marco";
     shellAliases = { };
     stateVersion = "24.05";
-    sessionVariables = { EDITOR = "nvim"; FOO = "bar"; };
+    sessionVariables = {
+    EDITOR = "nvim"; FOO = "bar";
+
+    };
     sessionPath = [ "/sbin" "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin" ];
     packages = with pkgs; [
+      cmake
+      zellij
+      atuin
+      tree
       babashka
+      watchexec
+      graphviz
+      kitty
       nixpkgs-fmt
       htop
       cacert
@@ -41,6 +51,7 @@
       wget
       mosh
       jq
+      wasmtime
     ];
 
     file =

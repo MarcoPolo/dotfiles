@@ -1,0 +1,1 @@
+/nix/store/a294l5wsww4v6w9q5y9j2v1q8dxp4fsw-home-manager-files/.config/nvim/lua/marco/init.lua

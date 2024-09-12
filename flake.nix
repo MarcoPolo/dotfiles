@@ -1,16 +1,30 @@
 {
   description = "A very basic flake";
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-  inputs.home-manager.url = "github:nix-community/home-manager/release-24.05";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-neovim.url = "github:nixos/nixpkgs/5629520edecb69630a3f4d17d3d33fc96c13f6fe";
 
-  inputs.flake-utils.url = "github:numtide/flake-utils";
-  inputs.sops-nix.url = "github:Mic92/sops-nix";
+    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    mac-app-util.url = "github:hraban/mac-app-util";
+    flake-utils.url = "github:numtide/flake-utils";
+    sops-nix.url = "github:Mic92/sops-nix";
+    zellij.url = "github:a-kenji/zellij-nix";
+    atuin.url = "github:atuinsh/atuin";
+  };
 
 
-  outputs = inputs@{ self, nixpkgs, flake-utils, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-neovim, flake-utils, zellij, mac-app-util, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = import nixpkgs { system = system; };
+        pkgs = import nixpkgs { 
+		system = system; 
+		overlays = [
+			(final: prev: { zellij = zellij.packages.${system}.default; })
+			(final: prev: { atuin = inputs.atuin.packages.${system}.default; })
+
+		];
+	};
+        neovim = (import nixpkgs-neovim { system = system; }).neovim-unwrapped;
       in
       {
         packages.home-manager = inputs.home-manager.defaultPackage.${system};
@@ -26,6 +40,7 @@
         # nix run .#home-manager -- switch --flake ".#codespace"
         packages.homeConfigurations.codespace = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+	  extraSpecialArgs = {neovimPackage = neovim; };
           modules = [
             ./home-manager/home.nix
             ./home-manager/codespaces.nix
@@ -35,7 +50,9 @@
         # nix run .#home-manager -- switch --flake '.#mac'
         packages.homeConfigurations.mac = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+	  extraSpecialArgs = {neovimPackage = neovim; };
           modules = [
+            mac-app-util.homeManagerModules.default
             inputs.sops-nix.homeManagerModules.sops
             ./home-manager/home.nix
             ./home-manager/mac/mac.nix
@@ -44,6 +61,7 @@
 
         packages.homeConfigurations.server = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+	  extraSpecialArgs = {neovimPackage = neovim; };
           modules = [
             ./home-manager/home.nix
             ./home-manager/server.nix
@@ -52,6 +70,7 @@
 
         packages.homeConfigurations.parallels = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+	  extraSpecialArgs = {neovimPackage = neovim; };
           modules = [
             ./home-manager/home.nix
             ./home-manager/parallels.nix

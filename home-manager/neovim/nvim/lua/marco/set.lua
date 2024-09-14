@@ -15,7 +15,13 @@ vim.api.nvim_set_keymap('t', '<D-j>', '<Cmd>ToggleTerm<CR>', { noremap = true, s
 
 -- Map in normal and visual mode to comment line or selection
 vim.api.nvim_set_keymap('n', '<D-/>', '<Cmd>lua require("Comment.api").toggle.linewise.current()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '<D-/>', '<Cmd>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('v', '<D-/>', '<Cmd>lua require("Comment.api").toggle.blockwise(vim.fn.visualmode())<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('v', '<D-/>', '<Cmd>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', { noremap = true, silent = true })
+-- Toggle selection (blockwise)
+-- vim.keymap.set('x', '<D-/>', function()
+--     vim.api.nvim_feedkeys(esc, 'nx', false)
+--     api.toggle.blockwise(vim.fn.visualmode())
+-- end)
 
 
 -- WIP 

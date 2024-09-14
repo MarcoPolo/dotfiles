@@ -21,7 +21,6 @@
     silver-searcher
     ripgrep
   ];
-  home.sessionVariables = { EDITOR = "nvim"; FOO = "bar"; };
 
   programs.tmux = {
     enable = true;
@@ -42,10 +41,10 @@
     enableZshIntegration = true;
   };
 
-  programs.z-lua = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  # programs.z-lua = {
+    # enable = true;
+    # enableZshIntegration = true;
+  # };
 
   programs.broot = {
     enable = true;

@@ -49,17 +49,17 @@
           sha256 = "02p4ll1f3sibjxbywx3a7ql758ih27vd9sx4nl9j0i64hwkdqfrb";
         };
       }
-      {
-        name = "history";
-        file = "lib/history.zsh";
-        src = pkgs.fetchFromGitHub {
-          owner = "ohmyzsh";
-          repo = "ohmyzsh";
-          rev = "b721053c87b4662c65452117a8db35af0154a29d";
-          sha256 =
-            "sha256:02y6mhvsxamsvfx2bcdrfbbl7g8v1cq8qycjbffn4w3d6aprq5c6";
-        };
-      }
+      # {
+      #   name = "history";
+      #   file = "lib/history.zsh";
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "ohmyzsh";
+      #     repo = "ohmyzsh";
+      #     rev = "b721053c87b4662c65452117a8db35af0154a29d";
+      #     sha256 =
+      #       "sha256:02y6mhvsxamsvfx2bcdrfbbl7g8v1cq8qycjbffn4w3d6aprq5c6";
+      #   };
+      # }
       {
         name = "pure";
         src = pkgs.fetchFromGitHub {

@@ -16,15 +16,17 @@
   outputs = inputs@{ self, nixpkgs, nixpkgs-neovim, flake-utils, zellij, mac-app-util, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
+        neovim-pkgs = (import nixpkgs-neovim { system = system; });
         pkgs = import nixpkgs { 
 		system = system; 
+      neovim = (import nixpkgs-neovim { system = system; }).neovim-unwrapped;
 		overlays = [
 			(final: prev: { zellij = zellij.packages.${system}.default; })
 			(final: prev: { atuin = inputs.atuin.packages.${system}.default; })
-
+			(final: prev: { neovim-unwrapped = neovim-pkgs.neovim-unwrapped; })
+			(final: prev: { vimPlugins = neovim-pkgs.vimPlugins; })
 		];
 	};
-        neovim = (import nixpkgs-neovim { system = system; }).neovim-unwrapped;
       in
       {
         packages.home-manager = inputs.home-manager.defaultPackage.${system};
@@ -40,7 +42,7 @@
         # nix run .#home-manager -- switch --flake ".#codespace"
         packages.homeConfigurations.codespace = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-	  extraSpecialArgs = {neovimPackage = neovim; };
+	  # extraSpecialArgs = {neovimPackage = neovim; };
           modules = [
             ./home-manager/home.nix
             ./home-manager/codespaces.nix
@@ -50,7 +52,7 @@
         # nix run .#home-manager -- switch --flake '.#mac'
         packages.homeConfigurations.mac = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-	  extraSpecialArgs = {neovimPackage = neovim; };
+	  # extraSpecialArgs = {neovimPackage = neovim; };
           modules = [
             mac-app-util.homeManagerModules.default
             inputs.sops-nix.homeManagerModules.sops
@@ -61,7 +63,7 @@
 
         packages.homeConfigurations.server = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-	  extraSpecialArgs = {neovimPackage = neovim; };
+	  # extraSpecialArgs = {neovimPackage = neovim; };
           modules = [
             ./home-manager/home.nix
             ./home-manager/server.nix
@@ -70,7 +72,7 @@
 
         packages.homeConfigurations.parallels = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-	  extraSpecialArgs = {neovimPackage = neovim; };
+	  # extraSpecialArgs = {neovimPackage = neovim; };
           modules = [
             ./home-manager/home.nix
             ./home-manager/parallels.nix

@@ -27,14 +27,15 @@
     shellAliases = { };
     stateVersion = "24.05";
     sessionVariables = {
-    EDITOR = "nvim"; FOO = "bar";
+    EDITOR = "nvim"; FOO = "bar2";
+# Let legendary find sqlite
+    LIBSQLITE = "${pkgs.sqlite.out}/lib/libsqlite3.dylib";
 
     };
     sessionPath = [ "/sbin" "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin" ];
     packages = with pkgs; [
       cmake
       zellij
-      atuin
       tree
       babashka
       watchexec
@@ -64,6 +65,19 @@
         { };
   };
 
+  programs.wezterm = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+  programs.atuin = {
+    enable = true;
+    enableZshIntegration = true;
+    flags = ["--disable-up-arrow"];
+  };
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   programs.gpg = {
     enable = true;

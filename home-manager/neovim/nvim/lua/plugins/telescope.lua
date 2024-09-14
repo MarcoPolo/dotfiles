@@ -72,12 +72,18 @@ return {
                         hijack_netrw = true,
                         hidden = true,
                     }
-                }
+                },
+                 pickers = {
+    colorscheme = {
+      enable_preview = true
+    }
+  }
             }
             require('telescope').setup(opts)
             require("telescope").load_extension "file_browser"
         end
 
-    }
+    },
+
 }
 

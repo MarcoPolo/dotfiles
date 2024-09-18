@@ -1,8 +1,8 @@
 return {
-  {
-    'rakr/vim-one',
-    config = function()
-      vim.cmd('colorscheme one')
-    end
-  }
+  -- {
+  --   'rakr/vim-one',
+  --   config = function()
+  --     vim.cmd('colorscheme one')
+  --   end
+  -- }
 }

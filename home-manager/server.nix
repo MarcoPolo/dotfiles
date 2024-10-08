@@ -14,6 +14,12 @@
     })
   ];
 
+  programs.neovim = {
+    enable = true;
+    vimAlias = true;
+    coc.enable = false;
+  };
+
   home.packages = with pkgs; [
     gh
   ];

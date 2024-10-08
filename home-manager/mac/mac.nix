@@ -35,6 +35,7 @@
     sessionPath = [ "/sbin" "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin" ];
     packages = with pkgs; [
       cmake
+      lazygit
       zellij
       tree
       babashka
@@ -68,6 +69,9 @@
   programs.wezterm = {
     enable = true;
     enableZshIntegration = true;
+    extraConfig = ''
+      return require('wezterm2.lua')
+    '';
   };
   programs.atuin = {
     enable = true;

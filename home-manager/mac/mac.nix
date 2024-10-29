@@ -34,6 +34,7 @@
     };
     sessionPath = [ "/sbin" "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin" ];
     packages = with pkgs; [
+      fontforge
       cmake
       lazygit
       zellij

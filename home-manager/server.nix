@@ -4,7 +4,7 @@
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "marco";
-  home.homeDirectory = "/Users/marco";
+  home.homeDirectory = "/home/marco";
 
   imports = [
     (import ./zsh.nix {

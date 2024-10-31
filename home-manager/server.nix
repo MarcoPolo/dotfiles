@@ -21,8 +21,38 @@
   };
 
   home.packages = with pkgs; [
-    gh
+      fontforge
+      cmake
+      lazygit
+      zellij
+      tree
+      babashka
+      watchexec
+      graphviz
+      kitty
+      nixpkgs-fmt
+      htop
+      cacert
+      gnupg
+      git-crypt
+      silver-searcher
+      ripgrep
+      gh
+      wget
+      mosh
+      jq
+      wasmtime
   ];
+
+  programs.atuin = {
+    enable = true;
+    enableZshIntegration = true;
+    flags = ["--disable-up-arrow"];
+  };
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   
 }
